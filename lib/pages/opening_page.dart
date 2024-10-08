@@ -43,11 +43,18 @@ class _OpeningPageState extends State<OpeningPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(currentIndex == 0?"Find the item you've \n   been looking for"
-                  : ( "Get those shopping \n        bags filled"),
+                  :( currentIndex == 1?"Get those shopping \n        bags filled"
+                  :(currentIndex == 2?"Find the item you've \n   been looking for"
+                  :(currentIndex == 3?"Package tracking"
+                  :"Find the item you've \n   been looking for"))),
                 style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
               SizedBox(height: 20,),
-              Text(currentIndex == 1?"Here you'll see rich varieties of goods, carefully \n classified for seamless browsing experience."
-                  :"Add any item you want to your cart, or save it on your \nwishlist, so you don't ,is it in your future purchases.",style: TextStyle(color: Colors.grey,),),
+              Text(currentIndex == 0?"Here you'll see rich varieties of goods, carefully \n classified for seamless browsing experience."
+                  :(currentIndex == 1?"Add any item you want to your cart, or save it on your \nwishlist, so you don't ,is it in your future purchases."
+                  :(currentIndex == 2?"Here you'll see rich varieties of goods, carefully \n classified for seamless browsing experience."
+                  :(currentIndex == 3?"In particular, Shoplon can pack your orders, and help \n you seamlessly manage your shipments."
+                  :"Here you'll see rich varieties of goods, carefully \n classified for seamless browsing experience."))),
+                style: TextStyle(color: Colors.grey,),),
             ],
           ),
         ],
@@ -56,10 +63,10 @@ class _OpeningPageState extends State<OpeningPage> {
         backgroundColor: Colors.deepPurpleAccent,
 
         onPressed: () {
-        print("pressed");
+        print(currentIndex);
         setState(() {
-          currentIndex = (currentIndex + 1);
-          if (currentIndex == 4) {
+          currentIndex += 1;
+          if (currentIndex == 5) {
             Navigator.push(context, MaterialPageRoute(builder: (context) => SinginPage(),));
           }
         });
