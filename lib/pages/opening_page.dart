@@ -42,7 +42,7 @@ class _OpeningPageState extends State<OpeningPage> {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(currentIndex == 0? currentIndex == 2?"Find the item you've \n   been looking for"
+              Text(currentIndex == 0?"Find the item you've \n   been looking for"
                   : ( "Get those shopping \n        bags filled"),
                 style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
               SizedBox(height: 20,),
