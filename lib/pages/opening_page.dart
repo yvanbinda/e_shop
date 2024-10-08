@@ -53,7 +53,7 @@ class _OpeningPageState extends State<OpeningPage> {
                   :(currentIndex == 1?"Add any item you want to your cart, or save it on your \nwishlist, so you don't ,is it in your future purchases."
                   :(currentIndex == 2?"Here you'll see rich varieties of goods, carefully \n classified for seamless browsing experience."
                   :(currentIndex == 3?"In particular, Shoplon can pack your orders, and help \n you seamlessly manage your shipments."
-                  :"Here you'll see rich varieties of goods, carefully \n classified for seamless browsing experience."))),
+                  :"Add any item you want to your cart, or save it on your \nwishlist, so you don't ,is it in your future purchases."))),
                 style: TextStyle(color: Colors.grey,),),
             ],
           ),
