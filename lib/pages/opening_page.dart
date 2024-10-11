@@ -11,6 +11,7 @@ class OpeningPage extends StatefulWidget {
 
 class _OpeningPageState extends State<OpeningPage> {
   int currentIndex = 0;
+  final PageController _pageController = PageController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,9 +28,13 @@ class _OpeningPageState extends State<OpeningPage> {
           Container(
             height: 400,
             width: 500,
-            child: IndexedStack(
-              index: currentIndex,
-              alignment: Alignment.center,
+            child: PageView(
+              controller: _pageController,
+              onPageChanged: (index) {
+                setState(() {
+                  currentIndex = index;
+                });
+              },
               children: [
                 Image.asset("assets/Illustration/Illustration-0.png"),
                 Image.asset("assets/Illustration/Illustration-1.png"),
