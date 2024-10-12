@@ -28,100 +28,165 @@ class _ShopPageState extends State<ShopPage> {
         children: [
           Container(
             color: Colors.grey,
-            height: 200,
-          ),
-          SizedBox(height: 20,),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text("Categories"),
+            height: 220,
           ),
           Container(
-            height: 50,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
+            padding: EdgeInsets.all(12.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Container(
-                    constraints: BoxConstraints(
-                      maxWidth: double.infinity, // Adjust as needed
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.deepPurple,
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: Text("  All Categories  ", style: TextStyle(fontSize: 12, color: Colors.white),),
-                    ),
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("Categories", style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500)),
+                ),
+                Container(
+                  height: 45,
+                  width: double.infinity,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(6.0),
+                        child: Container(
+                          width: 120,
+                          padding: EdgeInsets.all(6.0),
+                          decoration: BoxDecoration(
+                            color: Colors.deepPurple,
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          child: Center(child: Text("All Categories", style: TextStyle(color: Colors.white, fontSize: 12),)),
+                        ),
+                      ),
+                      Categories(),
+                      Categories(),
+                      Categories(),
+                      Categories(),
+                    ],
                   ),
                 ),
-                Categories(category: Row(
-                  children: [
-                    Icon(Icons.sd_card_alert, size: 12,),
-                    Text("  On Sale  ", style: TextStyle(fontSize: 12,)),
-                  ],
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("Popular products", style: TextStyle(fontWeight: FontWeight.w500),),
                 ),
-                ),Categories(category: Row(
-                  children: [
-                    Icon(Icons.sd_card_alert, size: 12,),
-                    Text("  Man's  ", style: TextStyle(fontSize: 12,)),
-                  ],
-                ),
-                ),Categories(category: Row(
-                  children: [
-                    Icon(Icons.sd_card_alert, size: 12,),
-                    Text("  Woman's  ", style: TextStyle(fontSize: 12,)),
-                  ],
-                ),
-                ),Categories(category: Row(
-                  children: [
-                    Icon(Icons.sd_card_alert, size: 12,),
-                    Text("  Kids  ", style: TextStyle(fontSize: 12,)),
-                  ],
-                ),
+                Padding(
+                  padding: const EdgeInsets.all(2.0),
+                  child: Container(
+                    height: 220,
+                    width: double.infinity,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        Products(),
+                        Products(),
+                        Products(),
+                        Products(),
+                        Products(),
+                      ],
+                    ),
+                  ),
                 ),
               ],
             ),
           ),
+          Container(
+            color: Colors.grey,
+            height: 170,
+          ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text("Popular products"),
+            child: Text("Flash sale", style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500)),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(2.0),
+            child: Container(
+              height: 220,
+              width: double.infinity,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  Products(),
+                  Products(),
+                  Products(),
+                  Products(),
+                  Products(),
+                ],
+              ),
+            ),
           ),
           Container(
-            height: 230,
-            child: ListView(
-              children: [
-                Products(
-                  description: "Ware house for you",
-                  discount: "\$420.0",
-                  product_image: Image.asset(""),
-                  product_name: "Mountain",
-                  product_price: "540.0",
-                  product_title: "LIPSY LONDON",
-                ),Products(
-                  description: "Ware house for you",
-                  discount: "\$420.0",
-                  product_image: Image.asset(""),
-                  product_name: "Mountain",
-                  product_price: "540.0",
-                  product_title: "LIPSY LONDON",
-                ),Products(
-                  description: "Ware house for you",
-                  discount: "\$420.0",
-                  product_image: Image.asset(""),
-                  product_name: "Mountain",
-                  product_price: "540.0",
-                  product_title: "LIPSY LONDON",
-                ),Products(
-                  description: "Ware house for you",
-                  discount: "\$420.0",
-                  product_image: Image.asset(""),
-                  product_name: "Mountain",
-                  product_price: "540.0",
-                  product_title: "LIPSY LONDON",
-                ),
-              ],
+            color: Colors.grey,
+            height: 150,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text("Best sellers", style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500)),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(2.0),
+            child: Container(
+              height: 220,
+              width: double.infinity,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  Products(),
+                  Products(),
+                  Products(),
+                  Products(),
+                  Products(),
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text("Most popular", style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500)),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(2.0),
+            child: Container(
+              height: 120,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    child: Container(
+                      clipBehavior: Clip.hardEdge,
+                      width: 300,
+                      decoration: BoxDecoration(
+                        border: Border.all(width: 1, color: Colors.black38),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Image.asset("assets/images/signUp_dark.png",height: 200,),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("LIPSY LONDON", style: TextStyle( fontSize: 12, color: Colors.grey),),
+                                SizedBox(height: 5,),
+                                Text("Mountain", style: TextStyle( fontSize: 12),),
+                                Text("Warehouse for you and your familly", style: TextStyle( fontSize: 12, overflow: TextOverflow.ellipsis, ),),
+                                Row(
+                                  children: [
+                                    Text("\$420.0", style: TextStyle( fontSize: 12, color: Colors.blue),),
+                                    SizedBox(width: 5,),
+                                    Text("\$540.0", style: TextStyle( fontSize: 12, color: Colors.grey, decoration: TextDecoration.lineThrough),),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ],
