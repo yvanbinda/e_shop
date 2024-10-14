@@ -1,4 +1,4 @@
-import 'package:e_shop/pages/shop_page.dart';
+import 'package:e_shop/pages/shop.dart';
 import 'package:e_shop/pages/signin_page.dart';
 import 'package:flutter/material.dart';
 
@@ -71,7 +71,7 @@ class _SignupPageState extends State<SignupPage> {
                         children: [
                           GestureDetector(
                             onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => ShopPage(),));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => Shop(),));
                             },
                               child: Text("Continue", style: TextStyle(color: Colors.white),)),
                         ],

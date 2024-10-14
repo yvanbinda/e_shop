@@ -1,3 +1,4 @@
+import 'package:e_shop/widgets/most_popular.dart';
 import 'package:e_shop/widgets/products.dart';
 import 'package:e_shop/widgets/category.dart';
 import 'package:flutter/foundation.dart';
@@ -13,18 +14,7 @@ class ShopPage extends StatefulWidget {
 class _ShopPageState extends State<ShopPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: Text("Shoplon"),
-        actions: [
-          Icon(Icons.search),
-          SizedBox(width: 20,),
-          Icon(Icons.notifications),
-          SizedBox(width: 10,),
-        ],
-      ),
-      body: ListView(
+    return ListView(
         children: [
           Container(
             color: Colors.grey,
@@ -64,6 +54,8 @@ class _ShopPageState extends State<ShopPage> {
                     ],
                   ),
                 ),
+
+                //Popular products
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text("Popular products", style: TextStyle(fontWeight: FontWeight.w500),),
@@ -92,6 +84,8 @@ class _ShopPageState extends State<ShopPage> {
             color: Colors.grey,
             height: 170,
           ),
+
+          //Flash sale
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text("Flash sale", style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500)),
@@ -117,6 +111,8 @@ class _ShopPageState extends State<ShopPage> {
             color: Colors.grey,
             height: 150,
           ),
+
+          //Best seller
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text("Best sellers", style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500)),
@@ -138,6 +134,8 @@ class _ShopPageState extends State<ShopPage> {
               ),
             ),
           ),
+
+          // Most popular
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text("Most popular", style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500)),
@@ -149,58 +147,43 @@ class _ShopPageState extends State<ShopPage> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(6.0),
-                    child: Container(
-                      clipBehavior: Clip.hardEdge,
-                      width: 300,
-                      decoration: BoxDecoration(
-                        border: Border.all(width: 1, color: Colors.black38),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Image.asset("assets/images/signUp_dark.png",height: 200,),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text("LIPSY LONDON", style: TextStyle( fontSize: 12, color: Colors.grey),),
-                                SizedBox(height: 5,),
-                                Text("Mountain", style: TextStyle( fontSize: 12),),
-                                Text("Warehouse for you and your familly", style: TextStyle( fontSize: 12, overflow: TextOverflow.ellipsis, ),),
-                                Row(
-                                  children: [
-                                    Text("\$420.0", style: TextStyle( fontSize: 12, color: Colors.blue),),
-                                    SizedBox(width: 5,),
-                                    Text("\$540.0", style: TextStyle( fontSize: 12, color: Colors.grey, decoration: TextDecoration.lineThrough),),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  )
+                  MostPopular(),
+                  MostPopular(),
+                  MostPopular(),
+                  MostPopular(),
+                  MostPopular(),
+                ],
+              ),
+            ),
+          ),
+          Container(
+            color: Colors.grey,
+            height: 170,
+          ),
+
+          // Best Seller
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text("Best sellers", style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500)),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(2.0),
+            child: Container(
+              height: 220,
+              width: double.infinity,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  Products(),
+                  Products(),
+                  Products(),
+                  Products(),
+                  Products(),
                 ],
               ),
             ),
           ),
         ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-          items: <BottomNavigationBarItem> [
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Shop'),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
-          ]
-      ),
     );
   }
 }

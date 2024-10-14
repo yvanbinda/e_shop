@@ -68,7 +68,6 @@ class _OpeningPageState extends State<OpeningPage> {
         backgroundColor: Colors.deepPurpleAccent,
 
         onPressed: () {
-        print(currentIndex);
         setState(() {
           currentIndex += 1;
           if (currentIndex == 5) {
