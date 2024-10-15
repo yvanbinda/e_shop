@@ -10,22 +10,26 @@ class DiscoverPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              TextInput(hintText: 'Find something...', prefixIcon: Icon(Icons.search),),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text("Categories", style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500)),
+        body: ListView(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  TextInput(hintText: 'Find something...', prefixIcon: Icon(Icons.search),),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text("Categories", style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500)),
+                  ),
+                //   Categorytile(),
+                //   Categorytile(),
+                //   Categorytile(),
+                //   Categorytile(),
+                 ],
               ),
-              Categorytile(),
-              Categorytile(),
-              Categorytile(),
-              Categorytile(),
-            ],
-          ),
+            ),
+          ],
         ),
     );
   }

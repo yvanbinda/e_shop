@@ -19,6 +19,7 @@ class _ShopState extends State<Shop> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
         title: Text("Shoplon"),
         actions: [
@@ -39,6 +40,7 @@ class _ShopState extends State<Shop> {
           ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
         mouseCursor: MouseCursor.defer,
         selectedItemColor: Colors.deepPurple,
         showSelectedLabels: true,

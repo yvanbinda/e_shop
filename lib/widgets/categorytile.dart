@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 
 
 class Categorytile extends StatelessWidget {
-  const Categorytile({super.key});
+  final List<String> items;
+  final String categoryTitle;
+  final IconData categoryIcon;
+  const Categorytile({super.key, required this.items, required this.categoryTitle, required this.categoryIcon});
 
   @override
   Widget build(BuildContext context) {
@@ -10,17 +13,18 @@ class Categorytile extends StatelessWidget {
       tilePadding: EdgeInsets.all(8.0),
       title: Row(
         children: [
-          Icon(Icons.access_alarms_rounded, size: 14,),
+          Icon(categoryIcon, size: 14,),
           SizedBox(width: 5,),
-          Text("On Sale", style: TextStyle(fontSize: 12),),
+          Text(categoryTitle, style: TextStyle(fontSize: 12),),
         ],
       ),
       children: <Widget>[
-        ListTile(title: Text("Item 1")),
-        Divider(),
-        ListTile(title: Text("Item 2")),
-        Divider(),
-        ListTile(title: Text("Item 3")),
+        ...items.map((item) => Column(
+          children: [
+            ListTile(title: Text(item)),
+            if (items.indexOf(item) != items.length - 1) Divider(),
+          ],
+        )).toList(),
       ],
     );
   }
